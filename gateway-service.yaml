@@ -61,7 +61,7 @@ spring:
             scope: openid
             client-secret: ${d-h-m.keycloak.clientSecret}
             authorization-grant-type: authorization_code
-#             redirect-uri: ${d-h-m.keycloak.serverUrl}/login/oauth2/code/${d-h-m.keycloak.clientId}
+            redirect-uri: ${d-h-m.keycloak.serverUrl}/login/oauth2/code/${d-h-m.keycloak.clientId}
         provider:
           keycloak:
             authorization-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}/protocol/openid-connect/auth

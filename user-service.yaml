@@ -34,7 +34,7 @@ spring:
                 provider: keycloak
                 client-id: ${d-h-m.keycloak.clientId}
                 client-secret: ${d-h-m.keycloak.clientSecret}
-                authorization-grant-type: client_credentials
+                authorization-grant-type: authorization_code
               provider:
                 users-client:
                   issuer-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}

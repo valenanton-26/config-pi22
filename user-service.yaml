@@ -22,20 +22,4 @@ spring:
       url: jdbc:mysql://localhost:3306/dhmoney
       username: grupo9
       password: grupo9
-    security:
-      oauth2:
-        resourceserver:
-          jwt:
-            issuer-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}
-            jwk-set-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}/protocol/openid-connect/certs
-          client:
-            registration:
-              users-client:
-                provider: keycloak
-                client-id: ${d-h-m.keycloak.clientId}
-                client-secret: ${d-h-m.keycloak.clientSecret}
-                authorization-grant-type: client_credentials
-              provider:
-                users-client:
-                  issuer-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}
-                  jwk-set-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}/protocol/openid-connect/certs
+  

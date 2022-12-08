@@ -17,8 +17,8 @@ spring:
     allow-bean-definition-overriding: true
   cloud:
     gateway:
-#       default-filters:
-#         - TokenRelay
+      default-filters:
+         - TokenRelay
       discovery:
         locator:
           enabled: true
@@ -48,26 +48,4 @@ spring:
             - Path=/transactions/**
           filters:
             - RemoveRequestHeader=Cookie
-      default-filters:
-        - TokenRelay
-
-  security:
-    oauth2:
-      client:
-        registration:
-          users-client:
-            provider: keycloak
-            client-id: ${d-h-m.keycloak.clientId}
-            scope: openid
-            client-secret: ${d-h-m.keycloak.clientSecret}
-            authorization-grant-type: authorization_code
-#            redirect-uri: ${d-h-m.keycloak.serverUrl}/login/oauth2/code/${d-h-m.keycloak.clientId}
-        provider:
-          keycloak:
-            authorization-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}/protocol/openid-connect/auth
-            userinfo-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}/protocol/openid-connect/userinfo
-            user-name-attribute: preferred_username
-            token-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}/protocol/openid-connect/token
-#            end-session-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}/protocol/openid-connect/logout
-            issuer-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}
-            jwk-set-uri: ${d-h-m.keycloak.serverUrl}/realms/${d-h-m.keycloak.realm}/protocol/openid-connect/certs
+      
